@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="theme-rewrites" xsi:type="array">
+                    <item name="class" xsi:type="string">Wamoco\TwigTheme\Controller\Router</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">15</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Controller\ResultInterface">
+        <plugin name="result-messages" disabled="true" />
+    </type>
+
+    <type name="Wamoco\TwigTheme\View\ContextProvider">
+        <arguments>
+            <argument name="regions" xsi:type="array">
+                <item name="base" xsi:type="string">Wamoco\TwigTheme\View\Context\Base</item>
+                <item name="customer" xsi:type="string">Wamoco\TwigTheme\View\Context\Customer</item>
+                <item name="frontend" xsi:type="string">Wamoco\TwigTheme\View\Context\Frontend</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Wamoco\TwigTheme\Engine\Twig">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="price" xsi:type="string">Wamoco\TwigTheme\View\Filters\Price</item>
+                <item name="qty" xsi:type="string">Wamoco\TwigTheme\View\Filters\Qty</item>
+                <item name="formatDate" xsi:type="string">Wamoco\TwigTheme\View\Filters\Date</item>
+                <item name="trans" xsi:type="string">Wamoco\TwigTheme\View\Filters\Translate</item>
+            </argument>
+            <argument name="functions" xsi:type="array">
+                <item name="renderElement" xsi:type="string">Wamoco\TwigTheme\View\Functions\RenderElement</item>
+                <item name="renderBlock" xsi:type="string">Wamoco\TwigTheme\View\Functions\RenderBlock</item>
+                <item name="getBlock" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetBlock</item>
+                <item name="renderChildBlock" xsi:type="string">Wamoco\TwigTheme\View\Functions\RenderChildBlock</item>
+                <item name="renderCmsBlock" xsi:type="string">Wamoco\TwigTheme\View\Functions\RenderCmsBlock</item>
+                <item name="getUrl" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetUrl</item>
+                <item name="getHelper" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetHelper</item>
+                <item name="getHeadData" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetHeadData</item>
+                <item name="getRequest" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetRequest</item>
+                <item name="getRequestParam" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetRequestParam</item>
+                <item name="getProductImage" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetProductImage</item>
+                <item name="getProduct" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetProduct</item>
+                <item name="getJs" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetJs</item>
+                <item name="getBreadcrumbs" xsi:type="string">Wamoco\TwigTheme\View\Functions\GetBreadcrumbs</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\App\Action\Action">
+        <plugin name="action-plugin" type="Wamoco\TwigTheme\Plugin\Magento\Framework\App\Action\Action" sortOrder="50" />
+    </type>
+
+    <virtualType name="Wamoco\TwigTheme\ThemeDebug" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/theme.log</argument>
+         </arguments>
+    </virtualType>
+    <virtualType name="wmcThemeLog" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Wamoco\TwigTheme\ThemeDebug</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Wamoco\TwigTheme\Plugin\Magento\Framework\App\Action\Action">
+        <arguments>
+            <argument name="logger" xsi:type="object">wmcThemeLog</argument>
+        </arguments>
+    </type>
+
+    <type name="Wamoco\TwigTheme\Engine\Config">
+        <arguments>
+            <argument name="cache" xsi:type="object">Magento\Framework\App\Cache\Type\Config</argument>
+            <argument name="logger" xsi:type="object">wmcThemeLog</argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\TemplateEngineFactory">
+        <arguments>
+            <argument name="engines" xsi:type="array">
+                <item name="twig" xsi:type="string">Wamoco\TwigTheme\Plugin\Magento\Framework\View\TemplateEngine\Twig</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="wamoco-theme-scrape-command" xsi:type="object">Wamoco\TwigTheme\Console\ScrapeCommand</item>
+            </argument>
+        </arguments>
+    </type>
+	<preference for="Magento\Framework\View\Design\Fallback\RulePool" type="Wamoco\TwigTheme\Plugin\Magento\Framework\View\Design\Fallback\RulePool" />
+	<preference for="Magento\Framework\Webapi\Authorization" type="Wamoco\TwigTheme\Plugin\Magento\Framework\Webapi\Authorization" />
+
+</config>
