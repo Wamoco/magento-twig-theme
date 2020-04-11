@@ -15,22 +15,14 @@ class Page extends \Magento\Framework\Controller\AbstractResult
     protected $twig;
 
     /**
-     * @var \Wamoco\TwigTheme\Engine\Twig\Context
-     */
-    protected $templateContext;
-
-    /**
      * __construct
      *
      * @param \Wamoco\TwigTheme\Engine\Twig $twig
-     * @param \Wamoco\TwigTheme\Engine\View\ContextProvider $templateContext
      */
     public function __construct (
-        \Wamoco\TwigTheme\Engine\Twig $twig,
-        \Wamoco\TwigTheme\View\ContextProvider $templateContext
+        \Wamoco\TwigTheme\Engine\Twig $twig
     ) {
         $this->twig = $twig;
-        $this->templateContext = $templateContext;
     }
 
     /**
@@ -43,8 +35,7 @@ class Page extends \Magento\Framework\Controller\AbstractResult
             return "";
         }
         return $this->twig->render(
-            $this->template,
-            $this->templateContext->getAll()
+            $this->template
         );
     }
 

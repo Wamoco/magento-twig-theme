@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2020 Wamoco GmbH
+ * See LICENSE.txt for license details.
+ */
 namespace Wamoco\TwigTheme\Plugin\Magento\Framework\App\Action;
 
 use Psr\Log\LoggerInterface;

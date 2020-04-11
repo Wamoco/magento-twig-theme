@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2020 Wamoco GmbH
+ * See LICENSE.txt for license details.
+ */
 namespace Wamoco\TwigTheme\Controller;
 
 use Magento\Framework\App\RequestInterface;
@@ -23,7 +27,7 @@ class Router implements \Magento\Framework\App\RouterInterface
     protected $actionFactory;
 
     /**
-     * @var UrlInterface
+     * @var \Magento\Framework\UrlInterface
      */
     protected $url;
 
@@ -43,22 +47,29 @@ class Router implements \Magento\Framework\App\RouterInterface
     protected $urlFinder;
 
     /**
+     * @var \Magento\UrlRewrite\Service\V1\Data\UrlRewriteFactory
+     */
+    protected $urlRewriteFactory;
+
+    /**
      * __construct
      *
      * @param \Wamoco\TwigTheme\Engine\Config $themeConfig
      * @param \Magento\Framework\App\ActionFactory $actionFactory
-     * @param UrlInterface $url
+     * @param \Magento\Framework\UrlInterface $url
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Magento\Framework\App\ResponseInterface $response
-     * @param UrlFinderInterface $urlFinder
+     * @param \Magento\UrlRewrite\Model\UrlFinderInterface $urlFinder
+     * @param \Magento\UrlRewrite\Service\V1\Data\UrlRewriteFactory $urlRewriteFactory
      */
     public function __construct(
         \Wamoco\TwigTheme\Engine\Config $themeConfig,
         \Magento\Framework\App\ActionFactory $actionFactory,
-        UrlInterface $url,
+        \Magento\Framework\UrlInterface $url,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\App\ResponseInterface $response,
-        UrlFinderInterface $urlFinder
+        \Magento\UrlRewrite\Model\UrlFinderInterface $urlFinder,
+        \Magento\UrlRewrite\Service\V1\Data\UrlRewriteFactory $urlRewriteFactory
     ) {
         $this->themeConfig = $themeConfig;
         $this->actionFactory = $actionFactory;
@@ -66,6 +77,7 @@ class Router implements \Magento\Framework\App\RouterInterface
         $this->storeManager = $storeManager;
         $this->response = $response;
         $this->urlFinder = $urlFinder;
+        $this->urlRewriteFactory = $urlRewriteFactory;
     }
 
     /**
@@ -116,9 +128,7 @@ class Router implements \Magento\Framework\App\RouterInterface
 
         if (array_key_exists($requestPath, $rewrites)) {
             $targetPath = $rewrites[$requestPath];
-            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-            $urlRewriteFactory = $objectManager->get(\Magento\UrlRewrite\Service\V1\Data\UrlRewriteFactory::class);
-            $urlRewrite = $urlRewriteFactory->create();
+            $urlRewrite = $this->urlRewriteFactory->create();
             $urlRewrite->setTargetPath($targetPath);
             return $urlRewrite;
         }

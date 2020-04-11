@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2020 Wamoco GmbH
+ * See LICENSE.txt for license details.
+ */
 namespace Wamoco\TwigTheme\Engine;
 
 use Twig\Loader\FilesystemLoader;
@@ -42,7 +46,7 @@ class Twig
         return $this->loader->exists($path);
     }
 
-    public function render($template, $context)
+    public function render($template, $context = [])
     {
         return $this->twig->render($template, $context);
     }

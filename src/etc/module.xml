@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2020 Wamoco GmbH
+ * See LICENSE.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="module.xsd">
     <module name="Wamoco_TwigTheme" setup_version="1.0.0" schema_version="1.0.0" release_version="1.0.0">
     </module>
