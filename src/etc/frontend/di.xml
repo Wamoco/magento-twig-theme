@@ -35,13 +35,16 @@
             </argument>
             <argument name="functions" xsi:type="array">
                 <item name="blockExists" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\BlockExists</item>
+                <item name="createBlock" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\CreateBlock</item>
                 <item name="customerData" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\CustomerData</item>
                 <item name="getAsset" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetAsset</item>
                 <item name="getBaseUrl" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetBaseUrl</item>
+                <item name="getActiveFilters" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetActiveFilters</item>
                 <item name="getBlock" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetBlock</item>
                 <item name="getBreadcrumbs" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetBreadcrumbs</item>
                 <item name="getCart" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetCart</item>
                 <item name="getCustomer" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetCustomer</item>
+                <item name="getFilters" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetFilters</item>
                 <item name="getFormKey" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetFormKey</item>
                 <item name="getHeadData" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetHeadData</item>
                 <item name="getHelper" xsi:type="string">Wamoco\TwigTheme\Engine\Functions\GetHelper</item>

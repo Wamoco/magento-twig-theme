@@ -5,7 +5,7 @@
  */
 namespace Wamoco\TwigTheme\Engine\Functions;
 
-class RenderCmsBlock extends \Twig\TwigFunction
+class GetActiveFilters extends \Twig\TwigFunction
 {
     /**
      * @var \Magento\Framework\View\LayoutInterface
@@ -28,11 +28,9 @@ class RenderCmsBlock extends \Twig\TwigFunction
 
     public function getCallable()
     {
-        return function($identifier) {
-            $block = $this->layout->createBlock("Magento\Cms\Block\Block")
-                ->setBlockId($identifier);
-            return $block->toHtml();
+        return function() {
+            $block = $this->layout->getBlock('catalog.leftnav');
+            return $block->getChildBlock('state')->getActiveFilters();
         };
     }
 }
-
