@@ -6,6 +6,8 @@ Ever imagined building a Magento 2 Frontend with ease? No more hazzle with Layou
 
 Please note: the module is not yet publicly available on packagist. Repositories have to be added manually.
 
+    composer config repositories.wamoco-twig-theme vcs git@github.com:Wamoco/magento-twig-theme.git
+
     composer require wamoco/twig-theme
     bin/magento module:enable Wamoco_TwigTheme
     bin/magento setup:upgrade
@@ -14,18 +16,11 @@ Please note: the module is not yet publicly available on packagist. Repositories
 
 Our blank theme can be used as a starting point or for reference. Follow these steps on a default M2 installation:
 
-
-    composer config repositories.wamoco-twig-theme vcs git@github.com:Wamoco/magento-twig-theme.git
     composer config repositories.wamoco-twig-theme-blank vcs https://github.com/Wamoco/twig-theme-blank.git
-
-
-    composer require wamoco/twig-theme
     composer require wamoco/twig-theme-blank
-
-    bin/magento module:enable Wamoco_TwigTheme
     bin/magento setup:upgrade
 
-
+Apply the theme in backend under `Content -> Configuration -> Design Configuration`.
 
 ## Documentation
 
