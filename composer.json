@@ -1,8 +1,14 @@
 {
   "name": "wamoco/twig-theme",
-  "description": "",
+  "description": "M2 Module to build themes with Twig template engine.",
   "type": "magento2-module",
   "version": "1.0.0",
+  "authors": [
+      {
+          "name": "Bernhard Leers",
+          "email": "bl@wamoco.de"
+      }
+  ],
   "license": [
     "OSL-3.0",
     "AFL-3.0"
