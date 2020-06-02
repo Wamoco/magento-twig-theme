@@ -4,15 +4,28 @@ Ever imagined building a Magento 2 Frontend with ease? No more hazzle with Layou
 
 ## Installation
 
-Please note: the module is not yet publicly available but it may soon be.
+Please note: the module is not yet publicly available on packagist. Repositories have to be added manually.
 
     composer require wamoco/twig-theme
-    php bin/magento module:enable Wamoco_TwigTheme
-    php bin/magento setup:upgrade
+    bin/magento module:enable Wamoco_TwigTheme
+    bin/magento setup:upgrade
 
 ## Getting started
 
-tbd.
+Our blank theme can be used as a starting point or for reference. Follow these steps on a default M2 installation:
+
+
+    composer config repositories.wamoco-twig-theme vcs git@github.com:Wamoco/magento-twig-theme.git
+    composer config repositories.wamoco-twig-theme-blank vcs https://github.com/Wamoco/twig-theme-blank.git
+
+
+    composer require wamoco/twig-theme
+    composer require wamoco/twig-theme-blank
+
+    bin/magento module:enable Wamoco_TwigTheme
+    bin/magento setup:upgrade
+
+
 
 ## Documentation
 
@@ -22,7 +35,7 @@ tbd.
 
 | <a href="https://github.com/bka" target="_blank">**bka**</a> | <a href="https://github.com/tomtone" target="_blank">**tomtone**</a> |
 | :---: |:---:|
-| [![Wamoco](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](https://github.com/bka){width:200px}    | <img src="https://avatars2.githubusercontent.com/u/2018438?s=200&v=3" width="200"> |
+| <img src="https://avatars2.githubusercontent.com/u/584644?s=200&v=3" width="200"> | <img src="https://avatars2.githubusercontent.com/u/2018438?s=200&v=3" width="200"> |
 | <a href="http://github.com/bka" target="_blank">`github.com/bka`</a> | <a href="http://github.com/tomtone" target="_blank">`github.com/tomtone`</a> |
 
 ---
