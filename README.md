@@ -22,7 +22,7 @@ tbd.
 
 | <a href="https://github.com/bka" target="_blank">**bka**</a> | <a href="https://github.com/tomtone" target="_blank">**tomtone**</a> |
 | :---: |:---:|
-| [![Wamoco](https://avatars2.githubusercontent.com/u/584644?s=200&v=3 =200x)](https://github.com/bka)    | [![Wamoco](https://avatars2.githubusercontent.com/u/2018438?s=200&v=3 =200x)](https://github.com/tomtone) |
+| [![Wamoco](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](https://github.com/bka)    | [![Wamoco](https://avatars2.githubusercontent.com/u/2018438?s=200&v=3)]{width:200px}(https://github.com/tomtone) |
 | <a href="http://github.com/bka" target="_blank">`github.com/bka`</a> | <a href="http://github.com/tomtone" target="_blank">`github.com/tomtone`</a> |
 
 ---
