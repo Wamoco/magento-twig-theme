@@ -29,9 +29,9 @@ tbd.
 
 ## Team
 
-| <a href="https://wamoco.de" target="_blank">**FVCproductions**</a> | <a href="https://wamoco.de" target="_blank">**FVCproductions**</a> | <a href="https://wamoco.de" target="_blank">**FVCproductions**</a> |
+| <a href="https://github.com/bka" target="_blank">**bka**</a> | <a href="https://github.com/tomtone" target="_blank">**tomtone**</a> | <a href="https://github.com/tomtone" target="_blank">**tomtone**</a> |
 | :---: |:---:| :---:|
-| [![FVCproductions](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](http://fvcproductions.com)    | [![FVCproductions](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](http://fvcproductions.com) | [![FVCproductions](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](http://fvcproductions.com)  |
+| [![FVCproductions](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](https://github.com/bka)    | [![FVCproductions](https://avatars2.githubusercontent.com/u/2018438?s=200&v=3)](https://github.com/tomtone) | [![FVCproductions](https://avatars2.githubusercontent.com/u/584644?s=200&v=3)](http://fvcproductions.com)  |
 | <a href="http://github.com/bka" target="_blank">`github.com/bka`</a> | <a href="http://github.com/bka" target="_blank">`github.com/bka`</a> | <a href="http://github.com/bka" target="_blank">`github.com/bka`</a> |
 
 - You can just grab their GitHub profile image URL
