@@ -37,8 +37,6 @@ Apply the theme in backend under `Content -> Configuration -> Design Configurati
 
 ## Support
 
-Reach out to me at one of the following places!
-
 - Website at <a href="https://www.wamoco.de" target="_blank">`wamoco.de`</a>
 
 ## License
